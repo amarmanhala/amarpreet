@@ -65,9 +65,11 @@ function Home() {
   return (
     <main className="home">
       <section className="intro" aria-labelledby="intro-title">
-        <p className="eyebrow greeting">Hi, I’m Ehsan <span aria-hidden="true">👋🏻</span></p>
-        <h1 id="intro-title">I design and build thoughtful<br />digital experiences.</h1>
-        <p className="lede">I turn complex ideas into clear, useful products—with a soft spot for calm interfaces, strong systems, and details that feel just right.</p>
+        <h1 id="intro-title" className="greeting">Hi, I’m Amar <span aria-hidden="true">👋🏻</span></h1>
+        <p className="bio">
+          Senior Frontend Developer with over 4 years of end-to-end experience in digital products, spanning SaaS, fintech, and AI-driven B2C applications. Currently, I work at Fintelics. Previously, I was a Design Lead at <a href="https://nibex.io/" target="_blank" rel="noreferrer">Nibex.io</a> and worked at <a href="https://www.linkedin.com/company/mors-llc/home/" target="_blank" rel="noreferrer">MORS</a> and <a href="https://remocapp.com/" target="_blank" rel="noreferrer">Remocapp</a>.
+          <br />Feel free to reach out to me through any of the channels below.
+        </p>
         <nav className="social-links" aria-label="Contact links">
           <a href="mailto:hello@amarpreet.ca">Email me <span>↗</span></a>
           <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
