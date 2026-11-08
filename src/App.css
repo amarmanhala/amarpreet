@@ -13,7 +13,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .theme-toggle:hover { transform: rotate(16deg) scale(1.09); border-color: rgba(102,137,199,.45); background: rgba(102,137,199,.1); box-shadow: 0 9px 22px rgba(35,45,65,.14); }
 .theme-toggle:active { transform: rotate(8deg) scale(.96); }
 .theme-toggle:focus-visible, a:focus-visible { outline: 2px solid #6689c7; outline-offset: 4px; }
-.home { flex: 1; width: 100%; min-height: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 24px 36px; }
+.home { position: relative; flex: 1; width: 100%; min-height: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 24px 36px 78px; }
 .intro { width: min(760px,100%); text-align: center; transform: translateY(-36px); }
 .eyebrow { margin: 0 0 20px; color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .greeting { margin: 0; color: var(--ink); font-size: clamp(24px,2.2vw,32px); font-weight: 600; letter-spacing: -.035em; line-height: 1.15; }
@@ -55,8 +55,8 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .folder-card:hover .paper-back, .folder-card:focus-visible .paper-back { transform: translate(-22%,-66%) rotate(-10deg) scale(1.02); transition-delay: 0s; }
 .folder-card:hover .paper-middle, .folder-card:focus-visible .paper-middle { transform: translate(18%,-76%) rotate(8deg) scale(1.02); transition-delay: .07s; }
 .folder-card:hover .paper-front, .folder-card:focus-visible .paper-front { transform: translateY(-58%) rotate(-1deg) scale(1.02); transition-delay: .14s; }
-.hover-hint { margin: 22px 0 0; color: var(--ink); font-size: 13px; font-weight: 500; letter-spacing: .02em; opacity: 1; }
-.hover-hint span { display: inline-block; margin-right: 6px; transform: rotate(-10deg); }
+.hover-hint { position: absolute; bottom: 24px; left: 50%; display: flex; align-items: center; gap: 9px; width: max-content; margin: 0; color: var(--ink); font-size: 13px; font-weight: 500; letter-spacing: .02em; transform: translateX(-50%); }
+.hover-hint svg { width: 30px; height: 25px; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-5deg); }
 .interior { flex: 1; width: min(1080px,calc(100% - 72px)); margin: 0 auto; padding: 76px 0 110px; animation: page-in .45s ease both; }
 @keyframes page-in { from { opacity: 0; transform: translateY(10px); } }
 .interior-heading { width: min(800px,100%); }
@@ -91,14 +91,14 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .about-panel p { margin: 0 0 24px; color: var(--muted); font-size: 18px; line-height: 1.7; }
 .about-panel a { display: inline-block; margin-top: 20px; font-size: 14px; font-weight: 600; }
 @media (max-width:900px) {
-  .site-header { padding: 22px 24px; } .home { padding: 48px 22px 36px; } .intro { transform: translateY(-20px); }
+  .site-header { padding: 22px 24px; } .home { padding: 48px 22px 76px; } .intro { transform: translateY(-20px); }
   .folder-grid { grid-template-columns: repeat(2,minmax(0,1fr)); width: min(420px,100%); gap: 34px 20px; margin-top: 72px; }
   .folder-visual { max-width: 120px; } .project { grid-template-columns: 1fr; } .project:nth-child(even) .project-art { order: 0; }
   .about-panel { grid-template-columns: 1fr; padding: 34px; } .about-monogram { min-height: 260px; }
 }
 @media (max-width:560px) {
   .site-header { padding: 18px; } .identity { gap: 9px; } .avatar { width: 38px; height: 38px; } .place { display: none; }
-  .clock { font-size: 10px; } .theme-toggle { width: 38px; height: 38px; } .home { justify-content: flex-start; padding-top: 48px; }
+  .clock { font-size: 10px; } .theme-toggle { width: 38px; height: 38px; } .home { justify-content: flex-start; padding: 48px 22px 36px; }
   .intro { transform: none; } .bio { font-size: 15px; } .social-links { gap: 15px; flex-wrap: wrap; }
   .folder-grid { gap: 32px 12px; margin-top: 64px; } .folder-visual { max-width: 104px; } .hover-hint { display: none; }
   .interior { width: calc(100% - 36px); padding-top: 48px; }

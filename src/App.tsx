@@ -78,7 +78,13 @@ function Home() {
       <section className="folder-grid" aria-label="Explore portfolio">
         {folders.map((folder, index) => <Folder key={folder.title} folder={folder} index={index} />)}
       </section>
-      <p className="hover-hint"><span>↖</span> Hover over a folder to peek inside</p>
+      <p className="hover-hint">
+        <svg viewBox="0 0 34 28" aria-hidden="true">
+          <path d="M31 24C20 25 11 19 8 8" />
+          <path d="M3 12 8 7l6 4" />
+        </svg>
+        Hover over a folder to peek inside
+      </p>
     </main>
   )
 }
