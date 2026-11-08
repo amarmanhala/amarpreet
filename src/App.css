@@ -32,7 +32,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 @keyframes folder-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .folder-visual { position: relative; display: block; width: 100%; max-width: 140px; aspect-ratio: 1.28; margin: 0 auto; }
 .folder-visual > img { position: absolute; z-index: 4; inset: auto 0 0; width: 100%; height: auto; display: block; }
-.paper { position: absolute; z-index: 2; left: 17%; bottom: 35%; width: 67%; height: 63%; padding: 12px; overflow: hidden; text-align: left; color: #29334a; border: 3px solid rgba(255,255,255,.8); border-radius: 8px; background: #eaf1fd; transform-origin: 50% 100%; transition: transform .8s cubic-bezier(.16,1,.3,1); }
+.paper { position: absolute; z-index: 2; left: 17%; bottom: 35%; width: 67%; height: 63%; padding: 12px; overflow: hidden; text-align: left; color: #29334a; border: 3px solid rgba(255,255,255,.8); border-radius: 8px; background: #eaf1fd; transform-origin: 50% 100%; transition: transform .9s cubic-bezier(.16,1,.3,1); will-change: transform; }
 .paper b { display: block; margin-bottom: 7px; font-size: 9px; line-height: 1.2; }
 .paper > i:not(.paper-rule) { display: block; width: 85%; height: 4px; margin: 5px 0; border-radius: 3px; background: rgba(41,51,74,.14); }
 .paper > i:nth-of-type(2) { width: 58%; }
@@ -52,9 +52,9 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .folder-copy { display: block; margin-top: 13px; }
 .folder-copy strong { display: block; font-size: 14px; letter-spacing: -.02em; }
 .folder-copy small { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; }
-.folder-card:hover .paper-back, .folder-card:focus-visible .paper-back { transform: translate(-18%,-30%) rotate(-10deg); }
-.folder-card:hover .paper-middle, .folder-card:focus-visible .paper-middle { transform: translate(14%,-36%) rotate(8deg); }
-.folder-card:hover .paper-front, .folder-card:focus-visible .paper-front { transform: translateY(-26%) rotate(-1deg); }
+.folder-card:hover .paper-back, .folder-card:focus-visible .paper-back { transform: translate(-22%,-66%) rotate(-10deg) scale(1.02); transition-delay: 0s; }
+.folder-card:hover .paper-middle, .folder-card:focus-visible .paper-middle { transform: translate(18%,-76%) rotate(8deg) scale(1.02); transition-delay: .07s; }
+.folder-card:hover .paper-front, .folder-card:focus-visible .paper-front { transform: translateY(-58%) rotate(-1deg) scale(1.02); transition-delay: .14s; }
 .hover-hint { margin: 22px 0 0; color: var(--ink); font-size: 13px; font-weight: 500; letter-spacing: .02em; opacity: 1; }
 .hover-hint span { display: inline-block; margin-right: 6px; transform: rotate(-10deg); }
 .interior { flex: 1; width: min(1080px,calc(100% - 72px)); margin: 0 auto; padding: 76px 0 110px; animation: page-in .45s ease both; }
