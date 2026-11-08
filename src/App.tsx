@@ -5,10 +5,10 @@ import './App.css'
 type Theme = 'light' | 'dark'
 
 const folders = [
-  { title: 'Selected Work', note: 'A few things I’ve shaped', to: '/work', tone: 'blue', cards: ['Systems', 'Product', 'Details'] },
-  { title: 'Field Notes', note: 'Ideas, process & experiments', to: '/notes', tone: 'peach', cards: ['Notes', 'Making', 'Process'] },
-  { title: 'Experience', note: 'Where I’ve been useful', to: '/experience', tone: 'green', cards: ['Craft', 'Teams', 'Growth'] },
-  { title: 'About Me', note: 'A little more context', to: '/about', tone: 'lilac', cards: ['Values', 'Offline', 'Hello'] },
+  { title: 'Selected Work', to: '/work', tone: 'blue', cards: ['Systems', 'Product', 'Details'] },
+  { title: 'Field Notes', to: '/notes', tone: 'peach', cards: ['Notes', 'Making', 'Process'] },
+  { title: 'Experience', to: '/experience', tone: 'green', cards: ['Craft', 'Teams', 'Growth'] },
+  { title: 'About Me', to: '/about', tone: 'lilac', cards: ['Values', 'Offline', 'Hello'] },
 ]
 
 const pageCopy = {
@@ -55,7 +55,7 @@ function Folder({ folder, index }: { folder: (typeof folders)[number]; index: nu
         <span className="paper paper-front"><span className="paper-kicker">0{index + 1}</span><b>{folder.cards[2]}</b><i className="paper-rule" /></span>
         <img src="/folder.webp" alt="" />
       </span>
-      <span className="folder-copy"><strong>{folder.title}</strong><small>{folder.note}</small></span>
+      <span className="folder-copy"><strong>{folder.title}</strong></span>
     </Link>
   )
 }

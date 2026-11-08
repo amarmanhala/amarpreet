@@ -50,8 +50,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .paper-kicker { display: block; margin-bottom: 12px; font-size: 8px; font-weight: 700; opacity: .5; }
 .paper-rule { display: block; width: 70%; height: 4px; border-radius: 4px; background: currentColor; opacity: .15; }
 .folder-copy { display: block; margin-top: 13px; }
-.folder-copy strong { display: block; font-size: 14px; letter-spacing: -.02em; }
-.folder-copy small { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; }
+.folder-copy strong { display: block; color: var(--muted); font-size: 14px; letter-spacing: -.02em; }
 .folder-card:hover .folder-visual, .folder-card:focus-visible .folder-visual { transform: translateY(-3px) scale(1.01); }
 .folder-card:hover .paper-back, .folder-card:focus-visible .paper-back { transform: translate(-22%,-66%) rotate(-10deg) scale(1.02); transition-delay: 0s; }
 .folder-card:hover .paper-middle, .folder-card:focus-visible .paper-middle { transform: translate(18%,-76%) rotate(8deg) scale(1.02); transition-delay: .07s; }
@@ -101,7 +100,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
   .site-header { padding: 18px; } .identity { gap: 9px; } .avatar { width: 38px; height: 38px; } .place { display: none; }
   .clock { font-size: 10px; } .theme-toggle { width: 38px; height: 38px; } .home { justify-content: flex-start; padding-top: 48px; }
   .intro { transform: none; } .bio { font-size: 15px; } .social-links { gap: 15px; flex-wrap: wrap; }
-  .folder-grid { gap: 36px 18px; margin-top: 64px; } .folder-visual { max-width: 112px; } .folder-copy small, .hover-hint { display: none; }
+  .folder-grid { gap: 36px 18px; margin-top: 64px; } .folder-visual { max-width: 112px; } .hover-hint { display: none; }
   .interior { width: calc(100% - 36px); padding-top: 48px; }
   .back-link { margin-bottom: 52px; } .project-list, .note-list, .timeline, .about-panel { margin-top: 64px; }
   .project { padding: 18px; min-height: 0; border-radius: 20px; } .project-art { min-height: 220px; }
