@@ -1,5 +1,5 @@
 :root { --ink: #282828; --muted: #77746c; --bio-text: #5f5d57; --paper: #fafafa; --surface: rgba(255,255,255,.5); --line: rgba(45,43,38,.13); --shadow: 0 22px 70px rgba(55,48,36,.09); }
-:root[data-theme='dark'] { --ink: #fafafa; --muted: #aaa69d; --bio-text: #c4c1b9; --paper: #111111; --surface: rgba(255,255,255,.045); --line: rgba(255,255,255,.12); --shadow: 0 22px 70px rgba(0,0,0,.24); color: var(--ink); background: var(--paper); }
+:root[data-theme='dark'] { --ink: #fafafa; --muted: #aaa69d; --bio-text: #d5d2cb; --paper: #111111; --surface: rgba(255,255,255,.045); --line: rgba(255,255,255,.12); --shadow: 0 22px 70px rgba(0,0,0,.24); color: var(--ink); background: var(--paper); }
 body { background: var(--paper); color: var(--ink); transition: color .25s, background .25s; }
 .site-shell { width: min(100%,1600px); min-height: 100svh; margin: 0 auto; display: flex; flex-direction: column; }
 .site-header { display: flex; align-items: center; justify-content: space-between; padding: 28px 42px; }
