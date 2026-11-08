@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 
 type Theme = 'light' | 'dark'
@@ -38,7 +38,6 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (theme: Theme) =>
         <span className="place">Toronto</span><span className="clock" aria-label={`Toronto time ${time}`}>{time}</span>
       </Link>
       <div className="header-actions">
-        <span className="available"><i /> Available for select projects</span>
         <button className="theme-toggle" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}>
           {theme === 'light' ? '◐' : '◑'}
         </button>
@@ -127,10 +126,6 @@ function InteriorPage({ page }: { page: keyof typeof pageCopy }) {
   )
 }
 
-function Footer() {
-  return <footer><span>© {new Date().getFullYear()} Amarpreet</span><nav aria-label="Footer navigation">{folders.map((folder) => <NavLink key={folder.to} to={folder.to}>{folder.title}</NavLink>)}</nav></footer>
-}
-
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }) }, [pathname])
@@ -149,7 +144,6 @@ function App() {
         <Route path="/notes" element={<InteriorPage page="notes" />} /><Route path="/experience" element={<InteriorPage page="experience" />} />
         <Route path="/about" element={<InteriorPage page="about" />} /><Route path="*" element={<Home />} />
       </Routes>
-      <Footer />
     </div>
   )
 }
