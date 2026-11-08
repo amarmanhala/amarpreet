@@ -6,14 +6,14 @@ type Theme = 'light' | 'dark'
 
 const folders = [
   { title: 'Selected Work', to: '/work', tone: 'blue', cards: ['Systems', 'Product', 'Details'] },
-  { title: 'Field Notes', to: '/notes', tone: 'peach', cards: ['Notes', 'Making', 'Process'] },
+  { title: 'Case Studies', to: '/case-studies', tone: 'peach', cards: ['Research', 'Process', 'Outcomes'] },
   { title: 'Experience', to: '/experience', tone: 'green', cards: ['Craft', 'Teams', 'Growth'] },
   { title: 'About Me', to: '/about', tone: 'lilac', cards: ['Values', 'Offline', 'Hello'] },
 ]
 
 const pageCopy = {
   work: { eyebrow: '01 / Selected work', title: 'A small collection of considered work.', intro: 'A home for the products, systems, and digital details I’m proud to have shaped. Case studies are being prepared with the care the work deserves.' },
-  notes: { eyebrow: '02 / Field notes', title: 'Things I’m noticing while making things.', intro: 'Short observations on product craft, systems thinking, and the useful mess between a first idea and a finished experience.' },
+  notes: { eyebrow: '02 / Case studies', title: 'A closer look at how the work came together.', intro: 'The thinking, decisions, and details behind selected products—from the first question through to a considered outcome.' },
   experience: { eyebrow: '03 / Experience', title: 'Working across design and development.', intro: 'I enjoy the point where clear thinking becomes a tangible interface—collaborating closely, prototyping quickly, and refining the details.' },
   about: { eyebrow: '04 / About', title: 'Curious by default. Particular about the details.', intro: 'I’m Amarpreet, a designer and developer in Toronto. I care about quiet, useful software and the small decisions that make it feel natural.' },
 }
@@ -104,8 +104,8 @@ function InteriorPage({ page }: { page: keyof typeof pageCopy }) {
       )}
       {page === 'notes' && (
         <section className="note-list">
-          {['Good interfaces explain themselves quietly', 'Prototype the question, not just the answer', 'Consistency should make room for context'].map((title, index) => (
-            <article key={title}><span>0{index + 1}</span><h2>{title}</h2><p>3 min read</p></article>
+          {['From ambiguity to a clear product direction', 'Building a system with room to grow', 'Refining the details that shape trust'].map((title, index) => (
+            <article key={title}><span>0{index + 1}</span><h2>{title}</h2><p>Case study</p></article>
           ))}
         </section>
       )}
@@ -141,7 +141,7 @@ function App() {
       <Header theme={theme} setTheme={setTheme} />
       <Routes>
         <Route path="/" element={<Home />} /><Route path="/work" element={<InteriorPage page="work" />} />
-        <Route path="/notes" element={<InteriorPage page="notes" />} /><Route path="/experience" element={<InteriorPage page="experience" />} />
+        <Route path="/case-studies" element={<InteriorPage page="notes" />} /><Route path="/experience" element={<InteriorPage page="experience" />} />
         <Route path="/about" element={<InteriorPage page="about" />} /><Route path="*" element={<Home />} />
       </Routes>
     </div>
