@@ -70,9 +70,9 @@ function Home() {
           <br />Feel free to reach out to me through any of the channels below.
         </p>
         <nav className="social-links" aria-label="Contact links">
-          <a href="mailto:hello@amarpreet.ca">Email me <span>↗</span></a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+          <a href="mailto:amar.manhala@gmail.com">Email me <span>↗</span></a>
+          <a href="https://www.linkedin.com/in/hyumanamar/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          <a href="https://github.com/amarmanhala" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
         </nav>
       </section>
       <section className="folder-grid" aria-label="Explore portfolio">
@@ -125,7 +125,7 @@ function InteriorPage({ page }: { page: keyof typeof pageCopy }) {
       {page === 'about' && (
         <section className="about-panel">
           <div className="about-monogram" aria-hidden="true">A</div>
-          <div><p>I like work that starts with a real question and ends with something simple enough to feel obvious. My process moves easily between a sketch, a conversation, and working code.</p><p>When I’m away from the screen, you’ll usually find me exploring Toronto, collecting references, or learning how something was made.</p><a href="mailto:hello@amarpreet.ca">Let’s make something good ↗</a></div>
+          <div><p>I like work that starts with a real question and ends with something simple enough to feel obvious. My process moves easily between a sketch, a conversation, and working code.</p><p>When I’m away from the screen, you’ll usually find me exploring Toronto, collecting references, or learning how something was made.</p><a href="mailto:amar.manhala@gmail.com">Let’s make something good ↗</a></div>
         </section>
       )}
     </main>
