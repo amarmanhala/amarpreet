@@ -1,5 +1,5 @@
-:root { --ink: #282828; --muted: #77746c; --paper: #fafafa; --surface: rgba(255,255,255,.5); --line: rgba(45,43,38,.13); --shadow: 0 22px 70px rgba(55,48,36,.09); }
-:root[data-theme='dark'] { --ink: #fafafa; --muted: #aaa69d; --paper: #111111; --surface: rgba(255,255,255,.045); --line: rgba(255,255,255,.12); --shadow: 0 22px 70px rgba(0,0,0,.24); color: var(--ink); background: var(--paper); }
+:root { --ink: #282828; --muted: #77746c; --bio-text: #5f5d57; --paper: #fafafa; --surface: rgba(255,255,255,.5); --line: rgba(45,43,38,.13); --shadow: 0 22px 70px rgba(55,48,36,.09); }
+:root[data-theme='dark'] { --ink: #fafafa; --muted: #aaa69d; --bio-text: #c4c1b9; --paper: #111111; --surface: rgba(255,255,255,.045); --line: rgba(255,255,255,.12); --shadow: 0 22px 70px rgba(0,0,0,.24); color: var(--ink); background: var(--paper); }
 body { background: var(--paper); color: var(--ink); transition: color .25s, background .25s; }
 .site-shell { width: min(100%,1600px); min-height: 100svh; margin: 0 auto; display: flex; flex-direction: column; }
 .site-header { display: flex; align-items: center; justify-content: space-between; padding: 28px 42px; }
@@ -20,7 +20,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .greeting span { display: inline-block; margin-left: 4px; animation: twinkle 2.6s ease-in-out infinite; }
 @keyframes twinkle { 50% { transform: rotate(18deg) scale(1.18); opacity: .65; } }
 .interior h1 { margin: 0; color: var(--ink); font-size: clamp(36px,4.2vw,66px); line-height: 1.04; letter-spacing: -.055em; font-weight: 600; }
-.bio { width: min(740px,100%); margin: 18px auto 0; color: var(--muted); font-size: 16px; line-height: 1.6; letter-spacing: -.01em; }
+.bio { width: min(740px,100%); margin: 18px auto 0; color: var(--bio-text); font-size: 16px; line-height: 1.6; letter-spacing: -.01em; }
 .bio a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
 .social-links { display: flex; justify-content: center; gap: 24px; margin-top: 24px; }
 .social-links a { position: relative; color: var(--ink); text-decoration: none; font-size: 13px; font-weight: 600; }
