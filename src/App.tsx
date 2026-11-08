@@ -129,11 +129,18 @@ function Footer() {
   return <footer><span>© {new Date().getFullYear()} Amarpreet</span><nav aria-label="Footer navigation">{folders.map((folder) => <NavLink key={folder.to} to={folder.to}>{folder.title}</NavLink>)}</nav></footer>
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }) }, [pathname])
+  return null
+}
+
 function App() {
   const [theme, setTheme] = useState<Theme>(() => localStorage.getItem('theme') === 'dark' ? 'dark' : 'light')
   useEffect(() => { document.documentElement.dataset.theme = theme; localStorage.setItem('theme', theme) }, [theme])
   return (
     <div className="site-shell">
+      <ScrollToTop />
       <Header theme={theme} setTheme={setTheme} />
       <Routes>
         <Route path="/" element={<Home />} /><Route path="/work" element={<InteriorPage page="work" />} />
