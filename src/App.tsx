@@ -65,7 +65,7 @@ function Home() {
   return (
     <main className="home">
       <section className="intro" aria-labelledby="intro-title">
-        <p className="eyebrow">Hello, I’m Amarpreet <span aria-hidden="true">✦</span></p>
+        <p className="eyebrow greeting">Hi, I’m Ehsan <span aria-hidden="true">👋🏻</span></p>
         <h1 id="intro-title">I design and build thoughtful<br />digital experiences.</h1>
         <p className="lede">I turn complex ideas into clear, useful products—with a soft spot for calm interfaces, strong systems, and details that feel just right.</p>
         <nav className="social-links" aria-label="Contact links">
