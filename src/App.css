@@ -55,7 +55,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .folder-card:hover .paper-back, .folder-card:focus-visible .paper-back { transform: translate(-18%,-30%) rotate(-10deg); }
 .folder-card:hover .paper-middle, .folder-card:focus-visible .paper-middle { transform: translate(14%,-36%) rotate(8deg); }
 .folder-card:hover .paper-front, .folder-card:focus-visible .paper-front { transform: translateY(-26%) rotate(-1deg); }
-.hover-hint { margin: 22px 0 0; color: var(--muted); font-size: 10px; letter-spacing: .04em; opacity: .7; }
+.hover-hint { margin: 22px 0 0; color: var(--ink); font-size: 13px; font-weight: 500; letter-spacing: .02em; opacity: 1; }
 .hover-hint span { display: inline-block; margin-right: 6px; transform: rotate(-10deg); }
 .interior { flex: 1; width: min(1080px,calc(100% - 72px)); margin: 0 auto; padding: 76px 0 110px; animation: page-in .45s ease both; }
 @keyframes page-in { from { opacity: 0; transform: translateY(10px); } }
