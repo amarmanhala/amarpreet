@@ -136,22 +136,6 @@ function AboutPage() {
         <p>Today, I take products from the first rough idea all the way to production. I use AI as a practical part of that process—to explore faster, test assumptions, and turn complex work into useful software. I’m now moving toward Forward Deployed Engineer roles, where I can work closer to real users and own problems end to end.</p>
       </section>
 
-      <div className="about-photos">
-        <figure className="about-photo">
-          <img src="/amritsar.jpg" alt="A wide view of the Golden Temple in Amritsar" />
-          <figcaption>
-            Golden Temple, Amritsar · <a href="https://commons.wikimedia.org/wiki/User:Satbir_4" target="_blank" rel="noreferrer">Satbir 4</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>
-          </figcaption>
-        </figure>
-
-        <figure className="about-photo">
-          <img src="/khalsa-college.jpg" alt="The historic main building of Khalsa College in Amritsar" />
-          <figcaption>
-            Khalsa College, Amritsar · <a href="https://commons.wikimedia.org/wiki/User:Harvinder_Chandigarh" target="_blank" rel="noreferrer">Harvinder Chandigarh</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>
-          </figcaption>
-        </figure>
-      </div>
-
       <section className="approach-section" aria-labelledby="approach-title">
         <div className="approach-heading">
           <span>How I work today</span>
