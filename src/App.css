@@ -90,25 +90,24 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .about-page { flex: 1; width: min(980px,calc(100% - 72px)); margin: 0 auto; padding: 20px 0 120px; animation: page-in .45s ease both; }
 .about-intro { width: min(690px,100%); margin: 0 auto; }
 .about-intro p { margin: 0 0 24px; color: var(--bio-text); font-size: 19px; line-height: 1.75; letter-spacing: -.015em; }
-.journey-card, .education-card { display: grid; grid-template-columns: minmax(220px,.8fr) minmax(280px,1.2fr); align-items: center; gap: 54px; margin-top: 78px; padding: 42px 50px; border-radius: 30px; background: var(--about-card); }
-.journey-card figure, .education-card figure { margin: 0; padding: 8px 8px 6px; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
-.journey-card figure { transform: rotate(-2.2deg); }
-.education-card figure { transform: rotate(2.2deg); }
-.journey-card:hover figure { transform: rotate(-1deg); }
-.education-card:hover figure { transform: rotate(1deg); }
-.journey-card img, .education-card img { width: 100%; aspect-ratio: 4/3; display: block; object-fit: cover; object-position: center; border-radius: 11px; }
-.journey-card figcaption, .education-card figcaption { margin-top: 7px; color: var(--muted); font-size: 8px; line-height: 1.4; text-align: center; }
+.journey-card, .education-card { position: relative; min-height: 440px; margin-top: 78px; overflow: hidden; border-radius: 30px; background: var(--about-card); }
+.journey-copy, .education-heading { position: relative; z-index: 4; width: min(520px,calc(100% - 64px)); margin: 0 auto; padding-top: 48px; text-align: center; }
+.journey-copy > span, .education-heading > span { display: none; }
+.journey-copy h2, .education-heading h2 { margin: 0 0 8px; color: var(--ink); font-size: clamp(26px,3.2vw,38px); line-height: 1.08; letter-spacing: -.045em; }
+.journey-copy p, .education-heading p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.photo-collage { position: absolute; inset: auto 0 0; height: 290px; margin: 0; }
+.photo-stack { position: relative; width: min(620px,82%); height: 100%; margin: 0 auto; }
+.photo-stack img { position: absolute; bottom: -18px; width: 36%; height: 245px; display: block; object-fit: cover; border: 7px solid var(--paper); border-radius: 3px; background: var(--paper); transition: transform .55s cubic-bezier(.2,.8,.2,1); }
+.photo-left { z-index: 1; left: 8%; object-position: 22% center; transform: rotate(-7deg); }
+.photo-center { z-index: 2; left: 32%; object-position: 50% center; transform: rotate(-.5deg) translateY(-10px); }
+.photo-right { z-index: 3; right: 7%; object-position: 78% center; transform: rotate(6deg); }
+.journey-card:hover .photo-left, .education-card:hover .photo-left { transform: rotate(-8deg) translate(-5px,-7px); }
+.journey-card:hover .photo-center, .education-card:hover .photo-center { transform: rotate(-.5deg) translateY(-17px); }
+.journey-card:hover .photo-right, .education-card:hover .photo-right { transform: rotate(7deg) translate(5px,-7px); }
+.journey-card figcaption, .education-card figcaption { position: absolute; z-index: 5; right: 16px; bottom: 10px; padding: 4px 6px; color: var(--muted); border-radius: 5px; background: color-mix(in srgb,var(--about-card) 86%,transparent); font-size: 8px; line-height: 1.3; }
 .journey-card figcaption a, .education-card figcaption a { text-underline-offset: 2px; }
-.journey-copy { margin: 0; padding: 0; }
-.journey-copy > span { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-.journey-copy h2 { margin: 12px 0 10px; color: var(--ink); font-size: clamp(26px,3.5vw,40px); line-height: 1.08; letter-spacing: -.045em; }
-.journey-copy p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
-.education-card { grid-template-columns: minmax(280px,1.2fr) minmax(220px,.8fr); }
-.education-heading { margin: 0; text-align: left; }
 .education-heading > span, .approach-heading > span { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-.education-heading h2, .approach-heading h2 { margin: 12px 0 10px; color: var(--ink); font-size: clamp(28px,4vw,44px); line-height: 1.08; letter-spacing: -.045em; }
-.education-heading h2 { font-size: clamp(26px,3.5vw,40px); }
-.education-heading p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.approach-heading h2 { margin: 12px 0 10px; color: var(--ink); font-size: clamp(28px,4vw,44px); line-height: 1.08; letter-spacing: -.045em; }
 .approach-section { margin-top: 96px; }
 .approach-heading { width: min(620px,100%); margin: 0 auto 38px; text-align: center; }
 .approach-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
@@ -123,7 +122,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
   .site-header { padding: 22px 24px; } .home { padding: 48px 22px 76px; } .intro { transform: translateY(-20px); }
   .folder-grid { grid-template-columns: repeat(2,minmax(0,1fr)); width: min(420px,100%); gap: 34px 20px; margin-top: 72px; }
   .folder-visual { max-width: 120px; } .project { grid-template-columns: 1fr; } .project:nth-child(even) .project-art { order: 0; }
-  .about-page { width: calc(100% - 48px); } .journey-card, .education-card { gap: 34px; padding: 34px; } .approach-grid { gap: 12px; }
+  .about-page { width: calc(100% - 48px); } .approach-grid { gap: 12px; }
 }
 @media (max-width:560px) {
   .site-header { padding: 18px; } .identity { gap: 9px; } .brand-logo { width: 64px; } .place { display: none; }
@@ -135,9 +134,13 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
   .back-link { margin-bottom: 52px; } .project-list, .note-list, .timeline { margin-top: 64px; }
   .project { padding: 18px; min-height: 0; border-radius: 20px; } .project-art { min-height: 220px; }
   .note-list article { grid-template-columns: 34px 1fr; } .note-list p { display: none; } .timeline article { grid-template-columns: 1fr; gap: 12px; }
-  .about-intro p { font-size: 17px; line-height: 1.7; } .journey-card, .education-card { grid-template-columns: 1fr; gap: 30px; margin-top: 62px; padding: 24px; border-radius: 22px; }
-  .journey-card figure, .education-card figure { width: 82%; margin: 0 auto; } .education-card figure { order: -1; }
-  .journey-copy, .education-heading { padding: 0 4px 4px; text-align: center; }
+  .about-intro p { font-size: 17px; line-height: 1.7; } .journey-card, .education-card { min-height: 390px; margin-top: 62px; border-radius: 22px; }
+  .journey-copy, .education-heading { width: calc(100% - 36px); padding-top: 34px; }
+  .journey-copy p, .education-heading p { font-size: 13px; }
+  .photo-collage { height: 250px; } .photo-stack { width: 104%; margin-left: -2%; }
+  .photo-stack img { bottom: -12px; width: 40%; height: 205px; border-width: 5px; }
+  .photo-left { left: 4%; } .photo-center { left: 30%; } .photo-right { right: 3%; }
+  .journey-card figcaption, .education-card figcaption { right: 8px; bottom: 7px; max-width: calc(100% - 16px); font-size: 7px; }
   .approach-section { margin-top: 70px; } .approach-grid { grid-template-columns: 1fr; } .approach-grid article { min-height: 210px; }
   .approach-grid h3 { margin-top: 45px; } .about-contact { margin-top: 70px; }
 }
