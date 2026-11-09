@@ -34,7 +34,7 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (theme: Theme) =>
   return (
     <header className="site-header">
       <Link className="identity" to="/" aria-label="Amarpreet, home">
-        <span className="avatar" aria-hidden="true">AP</span><span className="slash">/</span>
+        <img className="brand-logo" src="/amar-logo.png" alt="" /><span className="slash">/</span>
         <span className="place">Toronto</span><span className="clock" aria-label={`Toronto time ${time}`}>{time}</span>
       </Link>
       <div className="header-actions">
