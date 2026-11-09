@@ -146,7 +146,7 @@ function AboutPage() {
         <div className="journey-copy">
           <span>Where it started</span>
           <h2 id="roots-title">Amritsar, India</h2>
-          <p>Amritsar is home—the place where my curiosity, values, and instinct to keep moving forward first took shape. It remains an important part of how I see the world, even as my journey continues in Canada.</p>
+          <p>Home—the place that shaped my curiosity, values, and drive to keep moving forward.</p>
         </div>
       </section>
 
@@ -154,7 +154,7 @@ function AboutPage() {
         <div className="education-heading">
           <span>Education</span>
           <h2 id="education-title">Khalsa College</h2>
-          <p>I completed my Bachelor of Computer Applications and Master of Computer Applications at Khalsa College. Those years gave me a strong technical foundation and the confidence to keep learning by building.</p>
+          <p>I completed my BCA and MCA here, building the technical foundation I still use today.</p>
         </div>
         <figure>
           <img src="/khalsa-college.jpg" alt="The historic main building of Khalsa College in Amritsar" />

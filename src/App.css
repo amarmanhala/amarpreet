@@ -90,22 +90,25 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .about-page { flex: 1; width: min(980px,calc(100% - 72px)); margin: 0 auto; padding: 20px 0 120px; animation: page-in .45s ease both; }
 .about-intro { width: min(690px,100%); margin: 0 auto; }
 .about-intro p { margin: 0 0 24px; color: var(--bio-text); font-size: 19px; line-height: 1.75; letter-spacing: -.015em; }
-.journey-card { margin-top: 86px; padding: 20px; border-radius: 30px; background: var(--about-card); }
-.journey-card figure { margin: 0; }
-.journey-card img { width: 100%; aspect-ratio: 3.15/1; display: block; object-fit: cover; object-position: center; border-radius: 18px; }
-.journey-card figcaption, .education-card figcaption { margin-top: 11px; color: var(--muted); font-size: 9px; line-height: 1.5; text-align: right; }
+.journey-card, .education-card { display: grid; grid-template-columns: minmax(220px,.8fr) minmax(280px,1.2fr); align-items: center; gap: 54px; margin-top: 78px; padding: 42px 50px; border-radius: 30px; background: var(--about-card); }
+.journey-card figure, .education-card figure { margin: 0; padding: 8px 8px 6px; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.journey-card figure { transform: rotate(-2.2deg); }
+.education-card figure { transform: rotate(2.2deg); }
+.journey-card:hover figure { transform: rotate(-1deg); }
+.education-card:hover figure { transform: rotate(1deg); }
+.journey-card img, .education-card img { width: 100%; aspect-ratio: 4/3; display: block; object-fit: cover; object-position: center; border-radius: 11px; }
+.journey-card figcaption, .education-card figcaption { margin-top: 7px; color: var(--muted); font-size: 8px; line-height: 1.4; text-align: center; }
 .journey-card figcaption a, .education-card figcaption a { text-underline-offset: 2px; }
-.journey-copy { width: min(680px,100%); margin: 0 auto; padding: 38px 18px 32px; text-align: center; }
+.journey-copy { margin: 0; padding: 0; }
 .journey-copy > span { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-.journey-copy h2 { margin: 12px 0 12px; color: var(--ink); font-size: clamp(28px,4vw,44px); line-height: 1.08; letter-spacing: -.045em; }
-.journey-copy p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
-.education-card { margin-top: 86px; padding: 50px; border-radius: 30px; background: var(--about-card); }
-.education-heading { width: min(630px,100%); margin: 0 auto 38px; text-align: center; }
+.journey-copy h2 { margin: 12px 0 10px; color: var(--ink); font-size: clamp(26px,3.5vw,40px); line-height: 1.08; letter-spacing: -.045em; }
+.journey-copy p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.education-card { grid-template-columns: minmax(280px,1.2fr) minmax(220px,.8fr); }
+.education-heading { margin: 0; text-align: left; }
 .education-heading > span, .approach-heading > span { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 .education-heading h2, .approach-heading h2 { margin: 12px 0 10px; color: var(--ink); font-size: clamp(28px,4vw,44px); line-height: 1.08; letter-spacing: -.045em; }
-.education-heading p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
-.education-card figure { margin: 0; }
-.education-card img { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; object-position: center; border-radius: 20px; }
+.education-heading h2 { font-size: clamp(26px,3.5vw,40px); }
+.education-heading p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .approach-section { margin-top: 96px; }
 .approach-heading { width: min(620px,100%); margin: 0 auto 38px; text-align: center; }
 .approach-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
@@ -120,7 +123,7 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
   .site-header { padding: 22px 24px; } .home { padding: 48px 22px 76px; } .intro { transform: translateY(-20px); }
   .folder-grid { grid-template-columns: repeat(2,minmax(0,1fr)); width: min(420px,100%); gap: 34px 20px; margin-top: 72px; }
   .folder-visual { max-width: 120px; } .project { grid-template-columns: 1fr; } .project:nth-child(even) .project-art { order: 0; }
-  .about-page { width: calc(100% - 48px); } .education-card { padding: 34px; } .approach-grid { gap: 12px; }
+  .about-page { width: calc(100% - 48px); } .journey-card, .education-card { gap: 34px; padding: 34px; } .approach-grid { gap: 12px; }
 }
 @media (max-width:560px) {
   .site-header { padding: 18px; } .identity { gap: 9px; } .brand-logo { width: 64px; } .place { display: none; }
@@ -132,9 +135,9 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
   .back-link { margin-bottom: 52px; } .project-list, .note-list, .timeline { margin-top: 64px; }
   .project { padding: 18px; min-height: 0; border-radius: 20px; } .project-art { min-height: 220px; }
   .note-list article { grid-template-columns: 34px 1fr; } .note-list p { display: none; } .timeline article { grid-template-columns: 1fr; gap: 12px; }
-  .about-intro p { font-size: 17px; line-height: 1.7; } .journey-card, .education-card { margin-top: 62px; padding: 20px; border-radius: 22px; }
-  .journey-card img { aspect-ratio: 2/1; border-radius: 14px; } .journey-copy { padding: 30px 8px 22px; }
-  .education-heading { margin-bottom: 26px; } .education-card img { aspect-ratio: 4/3; border-radius: 14px; } .journey-card figcaption, .education-card figcaption { text-align: left; }
+  .about-intro p { font-size: 17px; line-height: 1.7; } .journey-card, .education-card { grid-template-columns: 1fr; gap: 30px; margin-top: 62px; padding: 24px; border-radius: 22px; }
+  .journey-card figure, .education-card figure { width: 82%; margin: 0 auto; } .education-card figure { order: -1; }
+  .journey-copy, .education-heading { padding: 0 4px 4px; text-align: center; }
   .approach-section { margin-top: 70px; } .approach-grid { grid-template-columns: 1fr; } .approach-grid article { min-height: 210px; }
   .approach-grid h3 { margin-top: 45px; } .about-contact { margin-top: 70px; }
 }
