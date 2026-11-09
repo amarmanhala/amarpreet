@@ -7,14 +7,13 @@ type Theme = 'light' | 'dark'
 const folders = [
   { title: 'Selected Work', to: '/work', tone: 'blue', cards: ['Systems', 'Product', 'Details'] },
   { title: 'Case Studies', to: '/case-studies', tone: 'peach', cards: ['Research', 'Process', 'Outcomes'] },
-  { title: 'Experience', to: '/experience', tone: 'green', cards: ['Craft', 'Teams', 'Growth'] },
+  { title: 'Tech Stack', to: '/tech-stack', tone: 'green', cards: ['Frontend', 'AI', 'Systems'] },
   { title: 'About Me', to: '/about', tone: 'lilac', cards: ['Values', 'Offline', 'Hello'] },
 ]
 
 const pageCopy = {
   work: { eyebrow: '01 / Selected work', title: 'A small collection of considered work.', intro: 'A home for the products, systems, and digital details I’m proud to have shaped. Case studies are being prepared with the care the work deserves.' },
   notes: { eyebrow: '02 / Case studies', title: 'A closer look at how the work came together.', intro: 'The thinking, decisions, and details behind selected products—from the first question through to a considered outcome.' },
-  experience: { eyebrow: '03 / Experience', title: 'Working across design and development.', intro: 'I enjoy the point where clear thinking becomes a tangible interface—collaborating closely, prototyping quickly, and refining the details.' },
 }
 
 function useTorontoTime() {
@@ -114,13 +113,6 @@ function InteriorPage({ page }: { page: keyof typeof pageCopy }) {
           ))}
         </section>
       )}
-      {page === 'experience' && (
-        <section className="timeline">
-          <article><span>Now</span><div><h2>Independent practice</h2><p>Designing and building focused digital products with thoughtful teams.</p></div></article>
-          <article><span>Previously</span><div><h2>Product design & development</h2><p>Turning ambiguity into clear flows, prototypes, and production-ready interfaces.</p></div></article>
-          <article><span>Always</span><div><h2>Learning in public</h2><p>Following curiosity across technology, craft, and the way people use tools.</p></div></article>
-        </section>
-      )}
     </main>
   )
 }
@@ -140,6 +132,41 @@ function AboutPage() {
   )
 }
 
+const stackGroups = [
+  { label: 'Product interface', tools: ['TypeScript', 'JavaScript', 'React'], note: 'The core of how I build clear, maintainable product experiences.' },
+  { label: 'Backend & data', tools: ['Java', 'Spring Boot', 'PostgreSQL'], note: 'For dependable APIs, business logic, and data that products can trust.' },
+  { label: 'Cloud & delivery', tools: ['GCP', 'Cloudflare'], note: 'The infrastructure I use to ship, scale, and keep products close to users.' },
+  { label: 'AI engineering', tools: ['Agentic coding', 'Codex', 'RAG'], note: 'Practical AI workflows for faster execution and context-aware product features.' },
+  { label: 'Design systems', tools: ['Figma', 'shadcn/ui', 'Tailwind CSS', 'Design systems'], note: 'A shared language for turning product decisions into consistent interfaces.' },
+]
+
+function TechStackPage() {
+  return (
+    <main className="about-page tech-stack-page">
+      <h1 className="sr-only">Tech stack</h1>
+
+      <section className="about-intro">
+        <p>My stack follows the way I build: start with the product experience, move through APIs and data, then ship and run it in the cloud. I choose tools that help teams move quickly without giving up clarity or quality.</p>
+        <p>AI is part of that workflow, not a separate layer. I use agentic coding and Codex to explore, implement, and validate faster—and RAG when a product needs useful answers grounded in real context.</p>
+      </section>
+
+      <section className="stack-list" aria-label="Technology groups">
+        {stackGroups.map((group) => (
+          <article className="stack-row" key={group.label}>
+            <h2>{group.label}</h2>
+            <div>
+              <p className="stack-tools">
+                {group.tools.map((tool) => <span key={tool}>{tool}</span>)}
+              </p>
+              <p className="stack-note">{group.note}</p>
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+  )
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }) }, [pathname])
@@ -155,7 +182,8 @@ function App() {
       <Header theme={theme} setTheme={setTheme} />
       <Routes>
         <Route path="/" element={<Home />} /><Route path="/work" element={<InteriorPage page="work" />} />
-        <Route path="/case-studies" element={<InteriorPage page="notes" />} /><Route path="/experience" element={<InteriorPage page="experience" />} />
+        <Route path="/case-studies" element={<InteriorPage page="notes" />} /><Route path="/tech-stack" element={<TechStackPage />} />
+        <Route path="/experience" element={<TechStackPage />} />
         <Route path="/about" element={<AboutPage />} /><Route path="*" element={<Home />} />
       </Routes>
     </div>
