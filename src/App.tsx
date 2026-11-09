@@ -132,15 +132,30 @@ function AboutPage() {
       <h1 className="sr-only">About me</h1>
 
       <section className="about-intro">
-        <p>I’m a frontend developer who enjoys turning complex product ideas into clear, thoughtful digital experiences. Curiosity brought me into software, and learning by building has kept me here.</p>
-        <p>I care about the space where design and code meet: understanding how people use a product, finding the simplest useful interaction, and refining the details until the experience feels natural.</p>
+        <p>I’m Amar, a frontend developer from Amritsar, India. I’ve always been curious about how things work—and even more interested in how technology can make everyday problems simpler.</p>
+        <p>My path has taken me from Amritsar to Canada. I completed my BCA and MCA, then moved to Canada for higher studies, new perspectives, and more room to grow. Each step has taught me to stay curious, adapt quickly, and feel at home in unfamiliar problems.</p>
+        <p>Today, I take products from the first rough idea all the way to production. I use AI as a practical part of that process—to explore faster, test assumptions, and turn complex work into useful software. I’m now moving toward Forward Deployed Engineer roles, where I can work closer to real users and own problems end to end.</p>
+      </section>
+
+      <section className="journey-card" aria-labelledby="roots-title">
+        <figure>
+          <img src="/amritsar.jpg" alt="A wide view of the Golden Temple in Amritsar" />
+          <figcaption>
+            Golden Temple, Amritsar · Photo by <a href="https://commons.wikimedia.org/wiki/User:Satbir_4" target="_blank" rel="noreferrer">Satbir 4</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noreferrer">CC BY-SA 3.0</a>
+          </figcaption>
+        </figure>
+        <div className="journey-copy">
+          <span>Where it started</span>
+          <h2 id="roots-title">Amritsar, India</h2>
+          <p>Amritsar is home—the place where my curiosity, values, and instinct to keep moving forward first took shape. It remains an important part of how I see the world, even as my journey continues in Canada.</p>
+        </div>
       </section>
 
       <section className="education-card" aria-labelledby="education-title">
         <div className="education-heading">
           <span>Education</span>
           <h2 id="education-title">Khalsa College</h2>
-          <p>I studied at Khalsa College—a chapter that strengthened my curiosity, discipline, and habit of learning through practice.</p>
+          <p>I completed my Bachelor of Computer Applications and Master of Computer Applications at Khalsa College. Those years gave me a strong technical foundation and the confidence to keep learning by building.</p>
         </div>
         <figure>
           <img src="/khalsa-college.jpg" alt="The historic main building of Khalsa College in Amritsar" />
@@ -152,13 +167,13 @@ function AboutPage() {
 
       <section className="approach-section" aria-labelledby="approach-title">
         <div className="approach-heading">
-          <span>How I work</span>
-          <h2 id="approach-title">Thoughtful from idea to interface.</h2>
+          <span>How I work today</span>
+          <h2 id="approach-title">Close to the problem. Responsible for the outcome.</h2>
         </div>
         <div className="approach-grid">
-          <article><b>01</b><h3>Understand first</h3><p>I start with the real problem, the people using the product, and the constraints around it.</p></article>
-          <article><b>02</b><h3>Build to learn</h3><p>I prototype early and use working software to make decisions concrete.</p></article>
-          <article><b>03</b><h3>Refine the details</h3><p>I care about accessibility, performance, and the small interactions that create trust.</p></article>
+          <article><b>01</b><h3>Start with people</h3><p>I listen for the real problem behind the request and keep the people using the product in view.</p></article>
+          <article><b>02</b><h3>Build end to end</h3><p>I’m comfortable moving from an early idea and interface through implementation, iteration, and production.</p></article>
+          <article><b>03</b><h3>Use AI with purpose</h3><p>I use AI to accelerate exploration and execution while keeping judgment, quality, and the outcome human-led.</p></article>
         </div>
       </section>
 
