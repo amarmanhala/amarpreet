@@ -5,10 +5,10 @@ import './App.css'
 type Theme = 'light' | 'dark'
 
 const folders = [
-  { title: 'Selected Work', to: '/work', tone: 'blue', cards: ['Systems', 'Product', 'Details'] },
-  { title: 'Case Studies', to: '/case-studies', tone: 'peach', cards: ['Research', 'Process', 'Outcomes'] },
-  { title: 'Tech Stack', to: '/tech-stack', tone: 'green', cards: ['Frontend', 'AI', 'Systems'] },
-  { title: 'About Me', to: '/about', tone: 'lilac', cards: ['Values', 'Offline', 'Hello'] },
+  { title: 'Selected Work', to: '/work', tone: 'blue', cards: ['Systems', 'Product', 'Details'], preview: 'paper' },
+  { title: 'Case Studies', to: '/case-studies', tone: 'peach', cards: ['Research', 'Process', 'Outcomes'], preview: 'paper' },
+  { title: 'Tech Stack', to: '/tech-stack', tone: 'green', cards: ['React', 'TypeScript', 'ChatGPT'], preview: 'tech' },
+  { title: 'About Me', to: '/about', tone: 'lilac', cards: ['Khalsa College', 'Amritsar', 'Toronto'], preview: 'places' },
 ]
 
 const pageCopy = {
@@ -48,9 +48,31 @@ function Folder({ folder, index }: { folder: (typeof folders)[number]; index: nu
   return (
     <Link className={`folder-card ${folder.tone}`} to={folder.to} style={{ '--delay': `${index * 70}ms` } as React.CSSProperties}>
       <span className="folder-visual" aria-hidden="true">
-        <span className="paper paper-back"><b>{folder.cards[0]}</b><i /><i /><i /></span>
-        <span className="paper paper-middle"><b>{folder.cards[1]}</b><span className="mini-grid"><i /><i /><i /></span></span>
-        <span className="paper paper-front"><span className="paper-kicker">0{index + 1}</span><b>{folder.cards[2]}</b><i className="paper-rule" /></span>
+        {folder.preview === 'places' ? (
+          <>
+            <span className="paper paper-back preview-card photo-preview">
+              <img src="/khalsa-college.jpg" alt="" title="Khalsa College · Harvinder Chandigarh · CC BY-SA 4.0" /><b>Khalsa College</b>
+            </span>
+            <span className="paper paper-middle preview-card photo-preview">
+              <img src="/amritsar-street.jpg" alt="" title="Amritsar street · Paul Simpson · CC BY 2.0" /><b>Amritsar</b>
+            </span>
+            <span className="paper paper-front preview-card photo-preview">
+              <img src="/toronto-cn-tower.jpg" alt="" title="CN Tower from Duncan Street · Vikulinkaaa · CC BY-SA 4.0" /><b>Toronto</b>
+            </span>
+          </>
+        ) : folder.preview === 'tech' ? (
+          <>
+            <span className="paper paper-back preview-card tech-preview"><img src="/react-icon.svg" alt="" /><b>React</b></span>
+            <span className="paper paper-middle preview-card tech-preview"><img src="/typescript-icon.svg" alt="" /><b>TypeScript</b></span>
+            <span className="paper paper-front preview-card tech-preview"><img src="/chatgpt-icon.svg" alt="" /><b>ChatGPT</b></span>
+          </>
+        ) : (
+          <>
+            <span className="paper paper-back"><b>{folder.cards[0]}</b><i /><i /><i /></span>
+            <span className="paper paper-middle"><b>{folder.cards[1]}</b><span className="mini-grid"><i /><i /><i /></span></span>
+            <span className="paper paper-front"><span className="paper-kicker">0{index + 1}</span><b>{folder.cards[2]}</b><i className="paper-rule" /></span>
+          </>
+        )}
         <img src="/folder.webp" alt="" />
       </span>
       <span className="folder-copy"><strong>{folder.title}</strong></span>
@@ -132,12 +154,22 @@ function AboutPage() {
   )
 }
 
-const stackGroups = [
-  { label: 'Product interface', tools: ['TypeScript', 'JavaScript', 'React'], note: 'The core of how I build clear, maintainable product experiences.' },
-  { label: 'Backend & data', tools: ['Java', 'Spring Boot', 'PostgreSQL'], note: 'For dependable APIs, business logic, and data that products can trust.' },
-  { label: 'Cloud & delivery', tools: ['GCP', 'Cloudflare'], note: 'The infrastructure I use to ship, scale, and keep products close to users.' },
-  { label: 'AI engineering', tools: ['Agentic coding', 'Codex', 'RAG'], note: 'Practical AI workflows for faster execution and context-aware product features.' },
-  { label: 'Design systems', tools: ['Figma', 'shadcn/ui', 'Tailwind CSS', 'Design systems'], note: 'A shared language for turning product decisions into consistent interfaces.' },
+const stackItems = [
+  { name: 'TypeScript', color: '#3178c6', note: 'My default for building reliable frontends with clearer contracts and safer changes.' },
+  { name: 'JavaScript', color: '#b58b00', note: 'The foundation of my frontend work and the language I use to understand the web deeply.' },
+  { name: 'React', color: '#087ea4', note: 'I use React to build responsive product interfaces, reusable components, and scalable application flows.' },
+  { name: 'Java', color: '#e76f00', note: 'I use Java when product work reaches backend services and structured business logic.' },
+  { name: 'Spring Boot', color: '#6db33f', note: 'My choice for shaping dependable APIs and production-ready Java services.' },
+  { name: 'GCP', color: '#4285f4', note: 'I work with Google Cloud to deploy and operate products beyond the local environment.' },
+  { name: 'Agentic coding', color: '#7c3aed', note: 'I use agentic workflows to plan, implement, test, and iterate with tighter feedback loops.' },
+  { name: 'Codex', color: '#10a37f', note: 'A hands-on engineering collaborator in my workflow, from exploration through production changes.' },
+  { name: 'RAG', color: '#8b5cf6', note: 'I use retrieval-augmented generation to ground AI experiences in useful, trusted context.' },
+  { name: 'PostgreSQL', color: '#336791', note: 'For relational data models that stay understandable as a product grows.' },
+  { name: 'Cloudflare', color: '#f38020', note: 'I use the edge for fast delivery, deployment, and resilient web experiences.' },
+  { name: 'Figma', color: '#a259ff', note: 'Where I explore product ideas, align details, and bridge design decisions into code.' },
+  { name: 'shadcn/ui', color: '#707070', note: 'A practical starting point for accessible components that can still feel distinctly product-led.' },
+  { name: 'Tailwind CSS', color: '#06b6d4', note: 'I use Tailwind to move quickly while keeping layout, spacing, and responsive behavior consistent.' },
+  { name: 'Design systems', color: '#e64980', note: 'I build reusable patterns that help teams ship coherent interfaces without slowing down.' },
 ]
 
 function TechStackPage() {
@@ -150,17 +182,11 @@ function TechStackPage() {
         <p>AI is part of that workflow, not a separate layer. I use agentic coding and Codex to explore, implement, and validate faster—and RAG when a product needs useful answers grounded in real context.</p>
       </section>
 
-      <section className="stack-list" aria-label="Technology groups">
-        {stackGroups.map((group) => (
-          <article className="stack-row" key={group.label}>
-            <h2>{group.label}</h2>
-            <div>
-              <p className="stack-tools">
-                {group.tools.map((tool) => <span key={tool}>{tool}</span>)}
-              </p>
-              <p className="stack-note">{group.note}</p>
-            </div>
-          </article>
+      <section className="tech-copy" aria-label="Technologies and experience">
+        {stackItems.map((item) => (
+          <p key={item.name}>
+            <strong style={{ color: item.color }}>{item.name}</strong> — {item.note}
+          </p>
         ))}
       </section>
     </main>
