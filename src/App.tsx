@@ -128,7 +128,6 @@ function InteriorPage({ page }: { page: keyof typeof pageCopy }) {
 function AboutPage() {
   return (
     <main className="about-page">
-      <Link className="back-link" to="/">← Back home</Link>
       <h1 className="sr-only">About me</h1>
 
       <section className="about-intro">
