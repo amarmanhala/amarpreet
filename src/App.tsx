@@ -136,22 +136,6 @@ function AboutPage() {
         <p>Today, I take products from the first rough idea all the way to production. I use AI as a practical part of that process—to explore faster, test assumptions, and turn complex work into useful software. I’m now moving toward Forward Deployed Engineer roles, where I can work closer to real users and own problems end to end.</p>
       </section>
 
-      <section className="approach-section" aria-labelledby="approach-title">
-        <div className="approach-heading">
-          <span>How I work today</span>
-          <h2 id="approach-title">Close to the problem. Responsible for the outcome.</h2>
-        </div>
-        <div className="approach-grid">
-          <article><b>01</b><h3>Start with people</h3><p>I listen for the real problem behind the request and keep the people using the product in view.</p></article>
-          <article><b>02</b><h3>Build end to end</h3><p>I’m comfortable moving from an early idea and interface through implementation, iteration, and production.</p></article>
-          <article><b>03</b><h3>Use AI with purpose</h3><p>I use AI to accelerate exploration and execution while keeping judgment, quality, and the outcome human-led.</p></article>
-        </div>
-      </section>
-
-      <section className="about-contact">
-        <p>Have something thoughtful in mind?</p>
-        <a href="mailto:amar.manhala@gmail.com">Let’s talk ↗</a>
-      </section>
     </main>
   )
 }

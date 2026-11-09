@@ -90,23 +90,11 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
 .about-page { flex: 1; width: min(980px,calc(100% - 72px)); margin: 0 auto; padding: 20px 0 120px; animation: page-in .45s ease both; }
 .about-intro { width: min(690px,100%); margin: 0 auto; }
 .about-intro p { margin: 0 0 24px; color: var(--bio-text); font-size: 19px; line-height: 1.75; letter-spacing: -.015em; }
-.approach-heading > span { color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-.approach-heading h2 { margin: 12px 0 10px; color: var(--ink); font-size: clamp(28px,4vw,44px); line-height: 1.08; letter-spacing: -.045em; }
-.approach-section { margin-top: 96px; }
-.approach-heading { width: min(620px,100%); margin: 0 auto 38px; text-align: center; }
-.approach-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-.approach-grid article { min-height: 245px; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
-.approach-grid b { color: var(--muted); font-size: 10px; letter-spacing: .08em; }
-.approach-grid h3 { margin: 62px 0 10px; color: var(--ink); font-size: 19px; letter-spacing: -.025em; }
-.approach-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
-.about-contact { display: flex; align-items: center; justify-content: space-between; margin-top: 96px; padding: 32px 0 0; border-top: 1px solid var(--line); }
-.about-contact p { margin: 0; color: var(--muted); font-size: 14px; }
-.about-contact a { font-size: 14px; font-weight: 600; text-underline-offset: 4px; }
 @media (max-width:900px) {
   .site-header { padding: 22px 24px; } .home { padding: 48px 22px 76px; } .intro { transform: translateY(-20px); }
   .folder-grid { grid-template-columns: repeat(2,minmax(0,1fr)); width: min(420px,100%); gap: 34px 20px; margin-top: 72px; }
   .folder-visual { max-width: 120px; } .project { grid-template-columns: 1fr; } .project:nth-child(even) .project-art { order: 0; }
-  .about-page { width: calc(100% - 48px); } .approach-grid { gap: 12px; }
+  .about-page { width: calc(100% - 48px); }
 }
 @media (max-width:560px) {
   .site-header { padding: 18px; } .identity { gap: 9px; } .brand-logo { width: 64px; } .place { display: none; }
@@ -119,7 +107,5 @@ body { background: var(--paper); color: var(--ink); transition: color .25s, back
   .project { padding: 18px; min-height: 0; border-radius: 20px; } .project-art { min-height: 220px; }
   .note-list article { grid-template-columns: 34px 1fr; } .note-list p { display: none; } .timeline article { grid-template-columns: 1fr; gap: 12px; }
   .about-intro p { font-size: 17px; line-height: 1.7; }
-  .approach-section { margin-top: 70px; } .approach-grid { grid-template-columns: 1fr; } .approach-grid article { min-height: 210px; }
-  .approach-grid h3 { margin-top: 45px; } .about-contact { margin-top: 70px; }
 }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
