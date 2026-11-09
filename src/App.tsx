@@ -15,7 +15,6 @@ const pageCopy = {
   work: { eyebrow: '01 / Selected work', title: 'A small collection of considered work.', intro: 'A home for the products, systems, and digital details I’m proud to have shaped. Case studies are being prepared with the care the work deserves.' },
   notes: { eyebrow: '02 / Case studies', title: 'A closer look at how the work came together.', intro: 'The thinking, decisions, and details behind selected products—from the first question through to a considered outcome.' },
   experience: { eyebrow: '03 / Experience', title: 'Working across design and development.', intro: 'I enjoy the point where clear thinking becomes a tangible interface—collaborating closely, prototyping quickly, and refining the details.' },
-  about: { eyebrow: '04 / About', title: 'Curious by default. Particular about the details.', intro: 'I’m Amarpreet, a designer and developer in Toronto. I care about quiet, useful software and the small decisions that make it feel natural.' },
 }
 
 function useTorontoTime() {
@@ -122,12 +121,51 @@ function InteriorPage({ page }: { page: keyof typeof pageCopy }) {
           <article><span>Always</span><div><h2>Learning in public</h2><p>Following curiosity across technology, craft, and the way people use tools.</p></div></article>
         </section>
       )}
-      {page === 'about' && (
-        <section className="about-panel">
-          <div className="about-monogram" aria-hidden="true">A</div>
-          <div><p>I like work that starts with a real question and ends with something simple enough to feel obvious. My process moves easily between a sketch, a conversation, and working code.</p><p>When I’m away from the screen, you’ll usually find me exploring Toronto, collecting references, or learning how something was made.</p><a href="mailto:amar.manhala@gmail.com">Let’s make something good ↗</a></div>
-        </section>
-      )}
+    </main>
+  )
+}
+
+function AboutPage() {
+  return (
+    <main className="about-page">
+      <Link className="back-link" to="/">← Back home</Link>
+      <h1 className="sr-only">About me</h1>
+
+      <section className="about-intro">
+        <p>I’m a frontend developer who enjoys turning complex product ideas into clear, thoughtful digital experiences. Curiosity brought me into software, and learning by building has kept me here.</p>
+        <p>I care about the space where design and code meet: understanding how people use a product, finding the simplest useful interaction, and refining the details until the experience feels natural.</p>
+      </section>
+
+      <section className="education-card" aria-labelledby="education-title">
+        <div className="education-heading">
+          <span>Education</span>
+          <h2 id="education-title">Khalsa College</h2>
+          <p>I studied at Khalsa College—a chapter that strengthened my curiosity, discipline, and habit of learning through practice.</p>
+        </div>
+        <figure>
+          <img src="/khalsa-college.jpg" alt="The historic main building of Khalsa College in Amritsar" />
+          <figcaption>
+            Khalsa College, Amritsar · Photo by <a href="https://commons.wikimedia.org/wiki/User:Harvinder_Chandigarh" target="_blank" rel="noreferrer">Harvinder Chandigarh</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section className="approach-section" aria-labelledby="approach-title">
+        <div className="approach-heading">
+          <span>How I work</span>
+          <h2 id="approach-title">Thoughtful from idea to interface.</h2>
+        </div>
+        <div className="approach-grid">
+          <article><b>01</b><h3>Understand first</h3><p>I start with the real problem, the people using the product, and the constraints around it.</p></article>
+          <article><b>02</b><h3>Build to learn</h3><p>I prototype early and use working software to make decisions concrete.</p></article>
+          <article><b>03</b><h3>Refine the details</h3><p>I care about accessibility, performance, and the small interactions that create trust.</p></article>
+        </div>
+      </section>
+
+      <section className="about-contact">
+        <p>Have something thoughtful in mind?</p>
+        <a href="mailto:amar.manhala@gmail.com">Let’s talk ↗</a>
+      </section>
     </main>
   )
 }
@@ -148,7 +186,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} /><Route path="/work" element={<InteriorPage page="work" />} />
         <Route path="/case-studies" element={<InteriorPage page="notes" />} /><Route path="/experience" element={<InteriorPage page="experience" />} />
-        <Route path="/about" element={<InteriorPage page="about" />} /><Route path="*" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} /><Route path="*" element={<Home />} />
       </Routes>
     </div>
   )
